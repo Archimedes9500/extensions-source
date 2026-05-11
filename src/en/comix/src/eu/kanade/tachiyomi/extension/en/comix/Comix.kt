@@ -28,7 +28,7 @@ class Comix :
     ConfigurableSource {
 
     override val name = "Comix"
-    override val baseUrl = "https://comix.to"
+    override val baseUrl = "http://localhost"
     private val apiUrl = "https://comix.to/api/v1"
     override val lang = "en"
     override val supportsLatest = true
@@ -57,7 +57,7 @@ class Comix :
 
     // ============================== Popular ==============================
     override fun popularMangaRequest(page: Int): Request {
-        val url = apiUrl.toHttpUrl().newBuilder().apply {
+        val url = "http://localhost".toHttpUrl().newBuilder().apply {
             addPathSegment("manga")
             addQueryParameter("order[score]", "desc")
             addQueryParameter("limit", "28")
