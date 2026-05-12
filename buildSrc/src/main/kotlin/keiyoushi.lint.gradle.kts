@@ -5,7 +5,7 @@ plugins {
 spotless {
     kotlin {
         target("**/*.kt", "**/*.kts")
-        targetExclude("**")
+        targetExclude("**/*")
         ktlint()
             .editorConfigOverride(mapOf(
                 "max_line_length" to 2147483647,
@@ -17,7 +17,7 @@ spotless {
 
     java {
         target("**/*.java")
-        targetExclude("**")
+        targetExclude("**/*")
         googleJavaFormat()
         removeUnusedImports()
         trimTrailingWhitespace()
@@ -26,13 +26,14 @@ spotless {
 
     format("gradle") {
         target("**/*.gradle")
+        targetExclude("**/*")
         trimTrailingWhitespace()
         endWithNewline()
     }
 
     format("xml") {
         target("**/*.xml")
-        targetExclude("**/build/**/*.xml")
+        targetExclude("**/*")
         trimTrailingWhitespace()
         endWithNewline()
     }
