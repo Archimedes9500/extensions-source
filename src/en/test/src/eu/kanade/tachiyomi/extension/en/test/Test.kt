@@ -1,4 +1,4 @@
-package eu.kanade.tachiyomi.extension.en.comix
+package eu.kanade.tachiyomi.extension.en.test
 
 import android.content.SharedPreferences
 import androidx.preference.ListPreference
@@ -23,12 +23,12 @@ import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.Request
 import okhttp3.Response
 
-class Comix :
+class Test :
     HttpSource(),
     ConfigurableSource {
 
-    override val name = "Comix"
-    override val baseUrl = "http://localhost"
+    override val name = "Test"
+    override val baseUrl = "http://localhost:8080"
     private val apiUrl = "https://comix.to/api/v1"
     override val lang = "en"
     override val supportsLatest = true
@@ -57,7 +57,7 @@ class Comix :
 
     // ============================== Popular ==============================
     override fun popularMangaRequest(page: Int): Request {
-        val url = "http://localhost".toHttpUrl().newBuilder().apply {
+        val url = "http://localhost:8080".toHttpUrl().newBuilder().apply {
             addPathSegment("manga")
             addQueryParameter("order[score]", "desc")
             addQueryParameter("limit", "28")

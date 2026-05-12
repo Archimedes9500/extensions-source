@@ -1,4 +1,4 @@
-package eu.kanade.tachiyomi.extension.en.comix
+package eu.kanade.tachiyomi.extension.en.test
 
 import android.app.Activity
 import android.content.ActivityNotFoundException

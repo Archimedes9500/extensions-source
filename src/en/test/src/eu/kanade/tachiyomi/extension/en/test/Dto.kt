@@ -1,4 +1,4 @@
-package eu.kanade.tachiyomi.extension.en.comix
+package eu.kanade.tachiyomi.extension.en.test
 
 import eu.kanade.tachiyomi.source.model.SChapter
 import eu.kanade.tachiyomi.source.model.SManga
