@@ -4,7 +4,7 @@ plugins {
 
 spotless {
     kotlin {
-        target("**/*.kt", "**/*.kts")
+        target()
         targetExclude("**/build/**/*.kt")
         ktlint()
             .editorConfigOverride(mapOf(
@@ -16,7 +16,7 @@ spotless {
     }
 
     java {
-        target("**/*.java")
+        target()
         targetExclude("**/build/**/*.java")
         googleJavaFormat()
         removeUnusedImports()
@@ -30,7 +30,7 @@ spotless {
         endWithNewline()
     }
 
-    format("xml") {
+    format() {
         target("**/*.xml")
         targetExclude("**/build/**/*.xml")
         trimTrailingWhitespace()
@@ -39,7 +39,7 @@ spotless {
 }
 
 tasks {
-    val spotlessTask = if (providers.environmentVariable("CI").orNull != "true") "spotlessApply" else "spotlessCheck"
+    val spotlessTask = "spotlessCheck"
     named("preBuild") {
         dependsOn(tasks.getByName(spotlessTask))
     }
